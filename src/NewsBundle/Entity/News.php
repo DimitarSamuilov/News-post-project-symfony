@@ -57,11 +57,36 @@ class News
      */
     private $user;
 
+    /**
+     * @var string
+     */
+    private $summary;
+
+
     public function __construct()
     {
         $this->posted=new \DateTime('now');
         $this->views=true;
     }
+
+    /**
+     * @return string
+     */
+    public function getSummary(): string
+    {
+        if($this->summary==null){
+            $this->setSummary();
+        }
+        return $this->summary;
+    }
+
+
+    public function setSummary()
+    {
+
+        $this->summary = substr($this->getContent(),0,strlen($this->getContent())/2)."...";
+    }
+
 
     /**
      * @return User
@@ -160,6 +185,11 @@ class News
     public function getPosted()
     {
         return $this->posted;
+    }
+
+    public function getFormattedDate()
+    {
+        return $this->getPosted()->format('Y-m-d H:i:s');
     }
 
     /**

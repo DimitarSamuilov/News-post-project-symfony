@@ -24,7 +24,7 @@
         <div class="navbar navbar-default navbar-static-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                   {# <a href="{{ path('blog_index') }}" class="navbar-brand">News site</a>#}
+                   <a href="{{ path('homepage') }}" class="navbar-brand">News site</a>
                     {#{% if app.user %}
                         <a href="{{ path('article_create') }}" class="navbar-brand">
                             Create Article
@@ -39,11 +39,11 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         {% if app.user %}
-                           {# <li>
-                                <a href="{{ path('user_profile') }}">
-                                    My Profile
+                            <li>
+                                <a href="{{ path('admin_news_list') }}">
+                                   Admin News Edit
                                 </a>
-                            </li>#}
+                            </li>
                             <li>
                                 <a href="{{ path('security_logout') }}">
                                     Logout

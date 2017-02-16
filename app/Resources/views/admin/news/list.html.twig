@@ -17,8 +17,11 @@
                 <td>{{ single.title }}</td>
                 <td>{{ single.summary }}</td>
                 <td>{{ single.formattedDate }}</td>
+                <td><a href="{{ path('admin_news_edit',{id:single.id}) }}" class="btn btn-primary btn-xs">Edit</a></td>
+                <td><a href="{{ path('admin_news_delete',{id:single.id}) }}" class="btn btn-primary btn-xs">Delete</a></td>
             </tr>
         {% endfor %}
+
         </tbody>
     </table>
 {% endblock %}

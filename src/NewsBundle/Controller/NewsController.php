@@ -48,7 +48,7 @@ class NewsController extends Controller
      */
     public function listNewsAction()
     {
-        $allNews=$this->getDoctrine()->getRepository(News::class);
+        $allNews=$this->getDoctrine()->getRepository(News::class)->findAll();
         return $this->render("news/list.html.twig",['news'=>$allNews]);
     }
 }
