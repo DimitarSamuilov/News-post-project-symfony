@@ -42,4 +42,13 @@ class NewsController extends Controller
         }
         return $this->render("news/create.html.twig",['form'=>$form->createView()]);
     }
+
+    /**
+     * @Route("/list",name="news_list")
+     */
+    public function listNewsAction()
+    {
+        $allNews=$this->getDoctrine()->getRepository(News::class);
+        return $this->render("news/list.html.twig",['news'=>$allNews]);
+    }
 }

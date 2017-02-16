@@ -43,9 +43,9 @@ class News
     private $posted;
 
     /**
-     * @var int
+     * @var boolean
      *
-     * @ORM\Column(name="views", type="integer",options={"default":0})
+     * @ORM\Column(name="views", type="boolean",options={"default":0})
      */
     private $views;
 
@@ -60,7 +60,7 @@ class News
     public function __construct()
     {
         $this->posted=new \DateTime('now');
-        $this->views=0;
+        $this->views=true;
     }
 
     /**
@@ -163,27 +163,21 @@ class News
     }
 
     /**
-     * Set views
-     *
-     * @param integer $views
-     *
-     * @return News
+     * @return boolean
      */
-    public function setViews($views)
-    {
-        $this->views = $views;
-
-        return $this;
-    }
-
-    /**
-     * Get views
-     *
-     * @return int
-     */
-    public function getViews()
+    public function isViews(): bool
     {
         return $this->views;
     }
+
+    /**
+     * @param boolean $views
+     */
+    public function setViews(bool $views)
+    {
+        $this->views = $views;
+    }
+
+
 }
 
