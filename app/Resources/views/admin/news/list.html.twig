@@ -8,17 +8,30 @@
             <th>Title</th>
             <th>Summary</th>
             <th>Date</th>
+            <th>IsActive
+            <th>
         </tr>
         </thead>
         <tbody>
-        {% for single in news  %}
+        {% for single in news %}
             <tr>
                 <td>{{ single.id }}</td>
                 <td>{{ single.title }}</td>
                 <td>{{ single.summary }}</td>
                 <td>{{ single.formattedDate }}</td>
+                <td>
+                    {% if single.views %}
+                        {{ single.views }}
+                    {% else %}
+                        {{ 0 }}
+                    {% endif %}
+                <td><a href="{{ path('change_active_state',{id:single.id}) }}" class="btn btn-primary btn-xs">Change
+                        state</a></td>
+                <td>
                 <td><a href="{{ path('admin_news_edit',{id:single.id}) }}" class="btn btn-primary btn-xs">Edit</a></td>
-                <td><a href="{{ path('admin_news_delete',{id:single.id}) }}" class="btn btn-primary btn-xs">Delete</a></td>
+                <td><a href="{{ path('admin_news_delete',{id:single.id}) }}" class="btn btn-primary btn-xs">Delete</a>
+                </td>
+                <td><a href="{{ path('view_single_news',{id:single.id}) }}" class="btn btn-primary btn-xs">View</a></td>
             </tr>
         {% endfor %}
 

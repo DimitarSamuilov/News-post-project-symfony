@@ -6,6 +6,7 @@ use NewsBundle\Entity\News;
 use NewsBundle\Form\NewsType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\Request;
 
 
@@ -36,10 +37,30 @@ class AdminController extends Controller
         if($news==null){
             return $this->redirectToRoute("admin_news_list");
         }
+        $originalImage=$news->getImage();
+        $file=new File(
+            $this->getParameter('kernel.root_dir')
+            .DIRECTORY_SEPARATOR.'..'
+            .DIRECTORY_SEPARATOR.'web'
+            .DIRECTORY_SEPARATOR.
+            $news->getImage()
+        );
+        $news->setImage($file);
+        $news->setImage(null);
         $form=$this->createForm(NewsType::class,$news);
         $form->handleRequest($request);
         if($form->isSubmitted() and $form->isValid()){
             try{
+                if($news->getImage()!==null) {
+                    $file = $news->getImage();
+                    $fileName = md5(uniqid()) . '.' . $file->guessExtension();
+                    $directory = $this->getParameter('kernel.root_dir') . '\..\web\images';
+                    $file->move($directory, $fileName);
+                    $news->setImage('images' . DIRECTORY_SEPARATOR . $fileName);
+                }
+                else{
+                    $news->setImage($originalImage);
+                }
                 $em=$this->getDoctrine()->getManager();
                 $em->persist($news);
                 $em->flush();
@@ -69,5 +90,28 @@ class AdminController extends Controller
         $em->flush();
 
         return $this->redirectToRoute('admin_news_list');
+    }
+
+    /**
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     * @Route("/change/{id}",name="change_active_state")
+     */
+    public function changeActiveState($id)
+    {
+        $news=$this->getDoctrine()->getRepository(News::class)->find($id);
+        if($news==null) {
+            return $this->redirectToRoute("admin_news_list");
+        }
+        if($news->isViews()){
+            $news->setViews(false);
+        }else{
+            $news->setViews(true);
+        }
+        $em=$this->getDoctrine()->getManager();
+        $em->persist($news);
+        $em->flush();
+        return $this->redirectToRoute("admin_news_list");
+
     }
 }
