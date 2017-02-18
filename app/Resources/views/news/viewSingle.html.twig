@@ -1,0 +1,10 @@
+{% extends("base.html.twig") %}
+
+{% block main %}
+    <div class="jumbotron">
+        <h1>{{ single.title }}</h1>
+        <img src="{{ asset(single.image) | imagine_filter('big_thumb') }}" alt="">
+        <p>{{ single.content }}</p>
+        <p>{{ single.formattedDate }}</p>
+    </div>
+{% endblock %}

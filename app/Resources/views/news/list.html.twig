@@ -1,24 +1,49 @@
 {% extends("base.html.twig") %}
 
 {% block main %}
-    <table class="table table-striped table-hover ">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Summary</th>
-            <th>Date</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for single in news  %}
+    {#
+        <table class="table table-striped table-hover ">
+            <thead>
             <tr>
-                <td>{{ single.id }}</td>
-                <td>{{ single.title }}</td>
-                <td>{{ single.summary }}</td>
-                <td>{{ single.formattedDate }}</td>
+                <th>ID</th>
+                <th></th>
+                <th>Title</th>
+                <th>Summary</th>
+                <th>Date</th>
+                <th></th>
             </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            {% for single in news  %}
+                <div class="jumbotron">
+                    <h1>{{ single.title }}</h1>
+                    <img src="{{ asset(single.image) | imagine_filter('my_thumb') }}" alt="">
+                    <p>{{ single.summary }}</p>
+                    <p>{{ single.formattedDate }}</p>
+                    <p><a href="#" class="btn btn-primary btn-lg">Learn more</a></p>
+                </div>
+                <tr>
+                    <td>{{ single.id }}</td>
+                    <td><img src="{{ asset(single.image) | imagine_filter('my_thumb') }}" alt=""></td>
+                    <td>{{ single.title }}</td>
+                    <td>{{ single.summary }}</td>
+                    <td>{{ single.formattedDate }}</td>
+                    <td><a href="#" class="btn btn-primary btn-sm"> Read more
+                        </a></td>
+                </tr>
+
+
+            {% endfor %}
+            </tbody>
+        </table>
+    #}
+    {% for single in news %}
+        <div class="jumbotron">
+            <h1>{{ single.title }}</h1>
+            <img src="{{ asset(single.image) | imagine_filter('small_thumb') }}" alt="">
+            <p>{{ single.summary }}</p>
+            <p>{{ single.formattedDate }}</p>
+            <p><a href="{{ path('view_single_news',{id:single.id}) }}" class="btn btn-primary btn-lg">Learn more</a></p>
+        </div>
+    {% endfor %}
 {% endblock %}

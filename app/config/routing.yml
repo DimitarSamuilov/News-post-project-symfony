@@ -1,3 +1,6 @@
 app:
     resource: "@NewsBundle/Controller/"
     type:     annotation
+
+_liip_inagine:
+  resource: "@LiipImagineBundle/Resources/config/routing.xml"

@@ -9,7 +9,7 @@
     {% endif %}
     <div class="container body-content span=8 offset=2">
         <div class="well">
-            <form class="form-horizontal" action="{{ path('news_create') }}" method="POST">
+            <form class="form-horizontal" enctype="multipart/form-data" action="{{ path('news_create') }}" method="POST">
                 <fieldset>
                     <legend>New Post</legend>
 
@@ -20,7 +20,6 @@
                                    name="news[title]">
                         </div>
                     </div>
-
                     <div class="form-group">
                         <label class="col-sm-4 control-label" for="article_content">Content</label>
                         <div class="col-sm-6">
@@ -28,7 +27,12 @@
                                   name="news[content]"></textarea>
                         </div>
                     </div>
-
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="article_title">Image</label>
+                        <div class="col-sm-4 ">
+                            <input type="file" id="news_image" name="news[image]" required="required">
+                        </div>
+                    </div>
                     {{ form_row(form._token) }}
 
                     <div class="form-group">
@@ -41,4 +45,7 @@
             </form>
         </div>
     </div>
+  {#  {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}#}
 {% endblock %}

@@ -3,7 +3,7 @@
 namespace NewsBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * News
  *
@@ -61,6 +61,30 @@ class News
      * @var string
      */
     private $summary;
+
+    /**
+     * @Assert\Image()
+     *
+     * @ORM\Column(name="image" ,type="string")
+     */
+    private $image;
+
+    /**
+     * @return mixed
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param mixed $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
 
 
     public function __construct()
