@@ -45,9 +45,9 @@ class News
     /**
      * @var boolean
      *
-     * @ORM\Column(name="views", type="boolean",options={"default":0})
+     * @ORM\Column(name="active", type="boolean",options={"default":0})
      */
-    private $views;
+    private $active;
 
     /**
      * @var User
@@ -90,7 +90,7 @@ class News
     public function __construct()
     {
         $this->posted=new \DateTime('now');
-        $this->views=true;
+        $this->active=true;
     }
 
     /**
@@ -219,18 +219,19 @@ class News
     /**
      * @return boolean
      */
-    public function isViews(): bool
+    public function isActive(): bool
     {
-        return $this->views;
+        return $this->active;
     }
 
     /**
-     * @param boolean $views
+     * @param boolean $active
      */
-    public function setViews(bool $views)
+    public function setActive(bool $active)
     {
-        $this->views = $views;
+        $this->active = $active;
     }
+
 
 
 }

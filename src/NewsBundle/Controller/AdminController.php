@@ -103,10 +103,10 @@ class AdminController extends Controller
         if($news==null) {
             return $this->redirectToRoute("admin_news_list");
         }
-        if($news->isViews()){
-            $news->setViews(false);
+        if($news->isActive()){
+            $news->setActive(false);
         }else{
-            $news->setViews(true);
+            $news->setActive(true);
         }
         $em=$this->getDoctrine()->getManager();
         $em->persist($news);

@@ -38,7 +38,7 @@
         </table>
     #}
     {% for single in news %}
-        {% if single.views %}
+        {% if single.active %}
         <div class="jumbotron">
             <h1>{{ single.title }}</h1>
             <img src="{{ asset(single.image) | imagine_filter('small_thumb') }}" alt="">

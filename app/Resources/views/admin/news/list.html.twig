@@ -20,8 +20,8 @@
                 <td>{{ single.summary }}</td>
                 <td>{{ single.formattedDate }}</td>
                 <td>
-                    {% if single.views %}
-                        {{ single.views }}
+                    {% if single.active %}
+                        {{ single.active }}
                     {% else %}
                         {{ 0 }}
                     {% endif %}
