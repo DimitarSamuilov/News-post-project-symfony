@@ -21,9 +21,9 @@
                 <td>{{ single.formattedDate }}</td>
                 <td>
                     {% if single.active %}
-                        {{ single.active }}
+                        {{ "yes" }}
                     {% else %}
-                        {{ 0 }}
+                        {{ "no" }}
                     {% endif %}
                 <td><a href="{{ path('change_active_state',{id:single.id}) }}" class="btn btn-primary btn-xs">Change
                         state</a></td>

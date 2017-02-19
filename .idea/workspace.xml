@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ca5c1a76-35cf-4c5c-858b-5a9baa500aae" name="Default" comment="Completed imave rendering with liip">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/homepage/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/homepage/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/admin/news/list.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/admin/news/list.html.twig" />
     </list>
     <ignored path="News.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,12 +24,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="list.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="list.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/news/list.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="111" selection-start-line="33" selection-start-column="107" selection-end-line="33" selection-end-column="111" />
-              <folding />
+            <state relative-caret-position="411">
+              <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+              <folding>
+                <element signature="e#1234#1250#0#Twig" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -70,7 +72,7 @@
       <file leaf-file-name="News.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/NewsBundle/Entity/News.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
+            <state relative-caret-position="3961">
               <caret line="234" column="0" selection-start-line="234" selection-start-column="0" selection-end-line="234" selection-end-column="0" />
               <folding>
                 <element signature="e#37#69#0#PHP" expanded="true" />
@@ -79,7 +81,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/homepage/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
@@ -135,10 +137,10 @@
         <option value="$PROJECT_DIR$/app/Resources/views/admin/news/edit.html.twig" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/NewsBundle/Entity/News.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/admin/news/list.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/news/list.html.twig" />
         <option value="$PROJECT_DIR$/src/NewsBundle/Controller/AdminController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/homepage/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/admin/news/list.html.twig" />
       </list>
     </option>
   </component>
@@ -203,6 +205,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -513,7 +516,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -594,7 +596,8 @@
       <workItem from="1487408234592" duration="6468000" />
       <workItem from="1487417995220" duration="3996000" />
       <workItem from="1487508712091" duration="913000" />
-      <workItem from="1487516570853" duration="30000" />
+      <workItem from="1487516570853" duration="318000" />
+      <workItem from="1487522204576" duration="52000" />
     </task>
     <task id="LOCAL-00001" summary="First commit ---&#10;Create news post , admin and user functionality">
       <created>1487268440912</created>
@@ -701,11 +704,18 @@
       <option name="project" value="LOCAL" />
       <updated>1487508867826</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Completed imave rendering with liip">
+      <created>1487516607792</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1487516607792</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40223000" />
+    <option name="totallyTimeSpent" value="40563000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1072,14 +1082,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/news/list.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="111" selection-start-line="33" selection-start-column="107" selection-end-line="33" selection-end-column="111" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/news/list.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="782">
@@ -1098,7 +1100,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/NewsBundle/Entity/News.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
+        <state relative-caret-position="3961">
           <caret line="234" column="0" selection-start-line="234" selection-start-column="0" selection-end-line="234" selection-end-column="0" />
           <folding>
             <element signature="e#37#69#0#PHP" expanded="true" />
@@ -1111,6 +1113,16 @@
         <state relative-caret-position="68">
           <caret line="4" column="69" selection-start-line="4" selection-start-column="69" selection-end-line="4" selection-end-column="69" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/news/list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+          <folding>
+            <element signature="e#1234#1250#0#Twig" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
